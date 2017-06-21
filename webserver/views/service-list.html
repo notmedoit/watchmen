@@ -53,7 +53,7 @@
                         <% } %>
 
                             <td class="status" data-title="'Status'" sortable="'status.currentOutage'">
-                                <span ng-if="row.status.currentOutage" class="label label-danger">offline</span>
+                                <span ng-if="row.status.currentOutage" class="label label-danger">{{row.status.currentOutage.error.message}}</span>
                                 <span ng-if="!row.status.currentOutage" class="label label-success">online</span>
                             </td>
 
@@ -77,8 +77,7 @@
                                 <span ng-if="row.service.isRestricted" class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                                 <a class="name" href="/services/{{row.service.id}}/view">
                         {{row.service.name}}
-                    </a><br ng-if="row.status.currentOutage" />
-                                <span ng-if="row.status.currentOutage" class="label label-danger">{{row.status.currentOutage.error.message}}</span>
+                    </a>
                             </td>
 
                             <td header-class="'hidden-xs'" class="outages hidden-xs" data-title="'Downtime last 24h'" sortable="'status.last24Hours.downtime'">
