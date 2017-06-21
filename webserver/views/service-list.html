@@ -53,7 +53,7 @@
                         <% } %>
 
                             <td class="status" data-title="'Status'" sortable="'status.currentOutage'">
-                                <span ng-if="row.status.currentOutage" class="label label-danger">{{row.status.currentOutage.error.message || row.status.currentOutage.error.code}}</span>
+                                <span ng-if="row.status.currentOutage" class="label label-danger">{{row.status.currentOutage.error.message || row.status.currentOutage.error.code || row.status.currentOutage.error}}</span>
                                 <span ng-if="!row.status.currentOutage" class="label label-success">online</span>
                             </td>
 
