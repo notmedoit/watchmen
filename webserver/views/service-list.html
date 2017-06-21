@@ -71,14 +71,14 @@
 
                             <td header-class="'hidden-sm hidden-xs'" class="service hidden-sm hidden-xs" data-title="'Service'" sortable="'name'">
                                 {{row.service.pingServiceName}}
-                                <span ng-if="row.status.currentOutage" class="label label-danger">{{row.status.currentOutage.error.message}}</span>
                             </td>
 
                             <td data-title="'Host'" sortable="'service.name'">
                                 <span ng-if="row.service.isRestricted" class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                                 <a class="name" href="/services/{{row.service.id}}/view">
                         {{row.service.name}}
-                    </a>
+                    </a><br ng-if="row.status.currentOutage" />
+                                <span ng-if="row.status.currentOutage" class="label label-danger">{{row.status.currentOutage.error.message}}</span>
                             </td>
 
                             <td header-class="'hidden-xs'" class="outages hidden-xs" data-title="'Downtime last 24h'" sortable="'status.last24Hours.downtime'">
